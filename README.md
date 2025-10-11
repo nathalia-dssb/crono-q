@@ -1,75 +1,48 @@
-# Nuxt Minimal Starter
-
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![crono-q-logo](./public/CronoQLogo.svg)
+<p align="center">
+<emph>Un sistema de filas virtuales para ventos donde se necesite la participación física de los asistentes.</emph>
+</p>
+<hr>
 
 ## Setup
 
-Make sure to install dependencies:
+### Dependencias
 
+- NodeJS
+- npm
+
+## Instalación
+
+1. Clonar el repositorio:
+    ```bash
+    git clone https://github.com/jmacias1503/crono-q.git
+    ```
+2. Instalar las dependencias:
+    ```bash
+    npm i
+    ```
+3. Configurar las variables de entorno:
+    - `DATABASE_URL`: elige una base de datos local o de _testing_
+4. Despliega el esquema de la base de datos con:
+    ```bash
+    npx prisma db push
+    ```
+## Inicialización del servidor de desarrollo
+
+El servidor iniciará en la url `http://localhost:3000`
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Despliegue del proyecto
+Despliega el proyecto con el siguiente comando
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Previsualiza el despliegue con:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
