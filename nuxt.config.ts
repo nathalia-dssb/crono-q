@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/tailwind.css"],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["reka-ui"],
+    },
   },
   modules: ["@nuxt/ui", "shadcn-nuxt"],
   shadcn: {
