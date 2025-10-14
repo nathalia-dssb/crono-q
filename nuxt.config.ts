@@ -12,9 +12,19 @@ export default defineNuxtConfig({
       include: ["reka-ui"],
     },
   },
-  modules: ["@nuxt/ui", "shadcn-nuxt", "@prisma/nuxt"],
+  modules: [
+    "@nuxt/ui",
+    "shadcn-nuxt",
+    "@prisma/nuxt",
+    "@scalar/nuxt",
+  ],
   shadcn: {
     prefix: "",
     componentDir: "./app/components/ui",
+  },
+  nitro: {
+    experimental: {
+      openAPI: true,
+    }
   },
 });
