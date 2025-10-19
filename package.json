@@ -17,6 +17,7 @@
     "@vee-validate/zod": "^4.15.1",
     "@vueuse/core": "^13.9.0",
     "@vueuse/motion": "^3.0.3",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.544.0",
@@ -32,6 +33,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "shadcn-nuxt": "^2.2.0",
     "typescript": "^5.9.3"
   }
