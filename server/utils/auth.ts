@@ -1,5 +1,4 @@
-import bcrypt from "bcrypt";
-import prisma from "../../lib/prisma";
+import prisma from "./prisma";
 import type { StudentLoginForm, AdminLoginForm } from "~/schemas/LoginSchema";
 
 // Tipo de respuesta exitosa
@@ -8,14 +7,12 @@ export interface AuthSuccessResponse {
   message: string;
   data: {
     userType: "student" | "admin";
-    id: number;
+    id: number | string;
     [key: string]: any;
   };
 }
 
-/**
- * Autentica un estudiante
- */
+//Autenticamos estudiante
 export async function authenticateStudent(
   credentials: StudentLoginForm
 ): Promise<AuthSuccessResponse> {
@@ -34,10 +31,8 @@ export async function authenticateStudent(
     });
   }
 
-  // Verificar contraseña
-  const isPasswordValid = await bcrypt.compare(password, student.password);
-
-  if (!isPasswordValid) {
+  // Verificar contraseña (comparación directa de texto plano)
+  if (password !== student.password) {
     throw createError({
       statusCode: 401,
       message: "Credenciales incorrectas",
@@ -60,9 +55,7 @@ export async function authenticateStudent(
   };
 }
 
-/**
- * Autentica un administrador
- */
+//Autenticamos un administrador
 export async function authenticateAdmin(
   credentials: AdminLoginForm
 ): Promise<AuthSuccessResponse> {
@@ -81,17 +74,15 @@ export async function authenticateAdmin(
     });
   }
 
-  // Verificar contraseña
-  const isPasswordValid = await bcrypt.compare(password, admin.password);
-
-  if (!isPasswordValid) {
+  // Verificar contraseña (comparación directa de texto plano)
+  if (password !== admin.password) {
     throw createError({
       statusCode: 401,
       message: "Credenciales incorrectas",
     });
   }
 
-  // Retornar datos del administrador (sin contraseña)
+  // Retornamos datos del administrador (sin contraseña)
   return {
     success: true,
     message: "Login exitoso",
@@ -101,13 +92,4 @@ export async function authenticateAdmin(
       admin_id: admin.admin_id,
     },
   };
-}
-
-/**
- * Hashea una contraseña con bcrypt
- * Útil para crear usuarios o cambiar contraseñas
- */
-export async function hashPassword(password: string): Promise<string> {
-  const saltRounds = 10;
-  return await bcrypt.hash(password, saltRounds);
 }
