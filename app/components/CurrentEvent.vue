@@ -35,7 +35,7 @@ const formatWaitingTime = (date: Date): string => {
             {{ spotData.location }}
           </div>
 
-          <div class="flex items-center gap-4">
+          <div class="flex flex-col md:flex-row md:items-center gap-4">
             <div class="flex items-center">
               <Ticket class="mr-3 h-6 w-6" />
               <span>Turno Actual</span>
