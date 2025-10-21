@@ -1,0 +1,1 @@
+import{u as r}from"./DBBIm6QW.js";import{e as t,c as s,o as a,J as n,Y as l,Z as d,p as i}from"#entry";const u=t({__name:"ViewLayout",setup(m){const{cx:e}=r();return(o,f)=>(a(),s("div",l(d(i(e)("flex flex-col min-h-0 flex-1 *:border-t first:*:border-t-0 md:*:border-t-0 xl:overflow-hidden md:flex-row leading-3"))),[n(o.$slots,"default")],16))}});export{u};

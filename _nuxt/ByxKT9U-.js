@@ -1,0 +1,1 @@
+import{b as e}from"./DT--psc0.js";import{e as o,q as r,o as i,w as p,d as s}from"#entry";import"./DBBIm6QW.js";import"./B-dksMZM.js";import"./BYayo6hL.js";const u=o({__name:"CollectionScripts",setup(a){return(c,t)=>(i(),r(e,null,{title:p(()=>t[0]||(t[0]=[s("Scripts")])),_:1}))}});export{u as default};

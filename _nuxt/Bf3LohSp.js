@@ -1,0 +1,1 @@
+import{b as e}from"./DT--psc0.js";import{e as t,q as r,o as i,w as a,d as m}from"#entry";import"./DBBIm6QW.js";import"./B-dksMZM.js";import"./BYayo6hL.js";const f=t({__name:"CollectionCookies",setup(s){return(l,o)=>(i(),r(e,null,{title:a(()=>o[0]||(o[0]=[m("Cookies")])),_:1}))}});export{f as default};
