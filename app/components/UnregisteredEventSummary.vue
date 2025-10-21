@@ -45,13 +45,13 @@ const formatTime = (date: Date): string => {
 
           <div class="flex flex-row gap-4">
             <Calendar class="h-4 w-4" />
-            <span class="text-nowrap"
+            <span class="text-w md:text-nowrap"
               >Día de inicio: {{ formatDate(eventData.startDate) }}</span
             >
           </div>
           <div class="flex flex-row gap-4">
             <Clock class="h-4 w-4" />
-            <span>Hola de inicio: {{ formatTime(eventData.startDate) }} </span>
+            <span>Hora de inicio: {{ formatTime(eventData.startDate) }} </span>
           </div>
         </CardHeader>
         <CardContent>
@@ -77,10 +77,10 @@ const formatTime = (date: Date): string => {
   </Card>
 
   <div
-    class="w-full h-full top-0 bottom-0 right-0 left-0 flex items-center justify-center fixed bg-background/20"
+    class="w-full h-full top-0 bottom-0 right-0 left-0 flex items-center justify-center fixed bg-background/20 p-2"
     v-if="isVisible"
   >
-    <Card class="min-w-120 w-fit" ref="innerContainer">
+    <Card class="md:min-w-120 md:w-fit w-full" ref="innerContainer">
       <CardHeader class="flex flex-row justify-between items-center">
         <h1 class="text-2xl text-primary font-semibold">
           {{ eventData.eventName }}
@@ -91,13 +91,13 @@ const formatTime = (date: Date): string => {
       <CardContent>
         <div class="flex flex-row gap-4">
           <Calendar class="h-4 w-4" />
-          <span class="text-nowrap"
+          <span class="md:text-nowrap"
             >Día de inicio: {{ formatDate(eventData.startDate) }}</span
           >
         </div>
         <div class="flex flex-row gap-4">
           <Clock class="h-4 w-4" />
-          <span>Hola de inicio: {{ formatTime(eventData.startDate) }} </span>
+          <span>Hora de inicio: {{ formatTime(eventData.startDate) }} </span>
         </div>
       </CardContent>
       <CardAction class="flex w-full justify-center">
