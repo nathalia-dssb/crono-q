@@ -21,7 +21,7 @@ model Students {
 }
 
 model Admins {
-  admin_id String    @id
+  admin_id Int    @id
   password String
 }
 
