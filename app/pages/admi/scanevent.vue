@@ -11,10 +11,12 @@ const onLoaded = () => {
 
 <template>
   <div class="w-full flex justify-center items-center">
-    <StreamBarcodeReader
-      @decode="onDecode"
-      @loaded="onLoaded"
-      class="w-100 h-100 items-center flex justify-center bg-primary"
-    ></StreamBarcodeReader>
+    <ClientOnly>
+      <StreamBarcodeReader
+        @decode="onDecode"
+        @loaded="onLoaded"
+        class="w-100 h-100 items-center flex justify-center bg-primary"
+      ></StreamBarcodeReader>
+    </ClientOnly>
   </div>
 </template>

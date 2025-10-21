@@ -10,14 +10,10 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: ["reka-ui"],
+      exclude: ["@prisma/client"],
     },
   },
-  modules: [
-    "@nuxt/ui",
-    "shadcn-nuxt",
-    "@prisma/nuxt",
-    "@scalar/nuxt",
-  ],
+  modules: ["@nuxt/ui", "shadcn-nuxt", "@prisma/nuxt", "@scalar/nuxt"],
   shadcn: {
     prefix: "",
     componentDir: "./app/components/ui",
@@ -25,6 +21,9 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       openAPI: true,
-    }
+    },
+  },
+  build: {
+    transpile: ["vue-barcode-reader"],
   },
 });
