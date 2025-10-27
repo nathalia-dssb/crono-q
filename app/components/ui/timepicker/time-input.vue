@@ -4,13 +4,13 @@ import { useVModel } from "@vueuse/core";
 import { cn } from "~/lib/utils";
 
 const props = defineProps<{
-  defaultValue?: string | number;
-  modelValue?: string | number;
+  defaultValue?: string;
+  modelValue?: string;
   class?: HTMLAttributes["class"];
 }>();
 
 const emits = defineEmits<{
-  (e: "update:modelValue", payload: string | number): void;
+  (e: "update:modelValue", payload: string): void;
 }>();
 
 const modelValue = useVModel(props, "modelValue", emits, {
@@ -22,6 +22,7 @@ const modelValue = useVModel(props, "modelValue", emits, {
 <template>
   <input
     v-model="modelValue"
+    type="time"
     data-slot="input"
     :class="
       cn(
@@ -33,3 +34,9 @@ const modelValue = useVModel(props, "modelValue", emits, {
     "
   />
 </template>
+
+<style scoped>
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+</style>

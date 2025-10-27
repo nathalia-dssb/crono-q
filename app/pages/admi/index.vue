@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { CrossIcon } from "lucide-vue-next";
 import { ref } from "vue";
 import AdmiUpcomingEvents from "~/components/AdmiUpcomingEvents.vue";
 
@@ -19,6 +20,12 @@ const myEvent = ref({
       <h1 class="text-secondary text-center text-2xl">Eventos disponibles</h1>
       <div class="px-6 md:w-2/3 flex flex-col gap-4">
         <AdmiUpcomingEvents :event-data="myEvent" />
+        <Card class="w-full">
+          <CardContent class="flex flex-row text-primary justify-between">
+            <p>Añadir evento</p>
+            <CrossIcon />
+          </CardContent>
+        </Card>
       </div>
     </div>
 
