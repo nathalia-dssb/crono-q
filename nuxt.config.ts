@@ -6,17 +6,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
-  vite: {
-    plugins: [tailwindcss()],
-    optimizeDeps: {
-      include: ["reka-ui"],
-    },
-  },
   modules: [
     "@nuxt/ui",
     "shadcn-nuxt",
     "@prisma/nuxt",
     "@scalar/nuxt",
+    "@vite-pwa/nuxt",
   ],
   shadcn: {
     prefix: "",
@@ -25,6 +20,55 @@ export default defineNuxtConfig({
   nitro: {
     experimental: {
       openAPI: true,
-    }
+    },
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["reka-ui"],
+    },
+  },
+  pwa: {
+    strategies: "generateSW",
+    registerType: "autoUpdate",
+    workbox: {
+      navigateFallback: "/",
+      globPatterns: ["**/*.{js,css,html,txt,ico,png,svg,woff2}"],
+    },
+    manifest: {
+      name: "Crono-Q",
+      short_name: "Crono-Q",
+      description: "A Progressive Web App built with Nuxt",
+      theme_color: "#ffffff",
+      lang: "en",
+      start_url: "/",
+      display: "standalone",
+      background_color: "#ffffff",
+      orientation: "portrait",
+      icons: [
+        {
+          src: "/icon-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/icon-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+        {
+          src: "/icon-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any maskable",
+        },
+      ],
+    },
+    client: {
+      installPrompt: true,
+    },
+    devOptions: {
+      enabled: true,
+    },
   },
 });
